@@ -1,0 +1,25 @@
+header {
+  background-color: var(--fifth-color);
+  padding: 0.4rem 0;
+  border-bottom: 2px solid var(--fourth-color);
+}
+
+.logo {
+  width: 154px;
+}
+
+@media (max-width: 1124px) {
+}
+
+@media (max-width: 885px) {
+  header {
+    background-color: var(--fifth-color);
+    padding: 0.4rem 0;
+    border-bottom: 2px solid var(--fourth-color);
+  }
+
+  .logo {
+    width: 154px;
+    margin-left: 1rem;
+  }
+}

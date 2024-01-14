@@ -1,0 +1,86 @@
+.restaurant {
+  background-color: var(--fifth-color);
+  display: flex;
+  padding: 2rem 0;
+}
+
+.restaurant h1 {
+  font-size: 1.9rem;
+  font-weight: 600;
+  font-style: normal;
+  margin-top: 1rem;
+  margin-bottom: 2.1rem;
+  font-family: "Stratos Deliveroo Web";
+  /* font-weight: normal;
+  font-style: normal; */
+}
+
+.title-description p {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  color: var(--grey-color);
+  font-weight: 100;
+}
+
+.restaurant img {
+  height: 45vh;
+  object-fit: cover;
+  margin-left: 2em;
+  border-radius: var(--border-radius);
+}
+
+@media (max-width: 1124px) {
+}
+
+@media (max-width: 885px) {
+  .restaurant {
+    flex-direction: column-reverse;
+    padding: 0;
+  }
+
+  .restaurant > div {
+    padding: 1.9rem;
+  }
+
+  .restaurant h1 {
+    font-size: 1.4rem;
+  }
+
+  .title-description p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .restaurant img {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+}
+
+/* .restaurant {
+  display: flex;
+  gap: 2rem;
+  background-color: #fff;
+  padding: 1.8rem 0;
+}
+
+.title-description h1 {
+  font-size: 1.9rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 2.1rem;
+  font-family: Stratos-SemiBold, sans-serif;
+}
+
+.title-description p {
+  font-size: 1.2rem;
+  line-height: 1.9rem;
+  color: var(--grey-color);
+  font-weight: 100;
+}
+
+.restaurant img {
+  width: 350px;
+  border-radius: var(--border-radius);
+} */

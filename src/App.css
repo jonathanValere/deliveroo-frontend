@@ -1,0 +1,35 @@
+/* VARIABLES */
+
+:root {
+  --border-radius: 6px;
+  /* COLORS */
+  --primary-color: #01cebd;
+  --secondary-color: #2e3333;
+  --third-color: #767676;
+  --fourth-color: #f3f5f5;
+  --fifth-color: #fff;
+  --grey-color: #868a8a;
+}
+
+body {
+  background-color: #f2f5f5;
+  font-family: IBM, sans-serif;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1250px) {
+  .wrapper {
+    width: 97%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 885px) {
+  .wrapper {
+    width: 100%;
+  }
+}
