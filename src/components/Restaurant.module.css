@@ -23,7 +23,7 @@
 }
 
 .restaurant img {
-  height: 45vh;
+  height: 26vh;
   object-fit: cover;
   margin-left: 2em;
   border-radius: var(--border-radius);
