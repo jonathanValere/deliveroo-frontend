@@ -1,0 +1,27 @@
+.cart {
+  background-color: var(--fifth-color);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  min-width: 350px;
+  border-radius: var(--border-radius);
+  box-shadow: 1px 2px 12px 2px #bfbfbf;
+  position: sticky;
+  top: 0;
+  height: fit-content;
+}
+
+.cart button {
+  width: 100%;
+  background-color: var(--primary-color);
+  border: none;
+  padding: 1em;
+  border-radius: var(--border-radius);
+  color: var(--fifth-color);
+  font-size: 1em;
+}
+
+.cart p {
+  text-align: center;
+  padding: 3em 0;
+}

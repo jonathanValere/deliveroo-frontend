@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Restaurant from "./Restaurant";
+import Restaurant from "./Restaurant/Restaurant";
+import Categories from "./Categories/Categories";
 
 export default function Content() {
   // Déclaration des states ----
@@ -25,7 +26,6 @@ export default function Content() {
     fetchData();
   }, []);
 
-  console.log("Données >>>>>", data);
   // Render ------
   return isLoading ? (
     <span>En cours de chargement...</span>
@@ -36,6 +36,7 @@ export default function Content() {
         description={data.restaurant.description}
         picture={data.restaurant.picture}
       />
+      <Categories categories={data.categories} />
     </main>
   );
 }

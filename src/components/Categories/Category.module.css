@@ -1,0 +1,9 @@
+.category {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  margin-bottom: 1em;
+  font-size: 1.5rem;
+}

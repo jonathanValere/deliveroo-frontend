@@ -1,0 +1,9 @@
+.part-content {
+  display: flex;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.categories {
+  width: 850px;
+}
