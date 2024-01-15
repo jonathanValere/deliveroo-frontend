@@ -1,7 +1,7 @@
 .meal {
   display: flex;
   background-color: var(--fifth-color);
-  width: 48%;
+  width: 47%;
   min-height: 160px;
   justify-content: space-between;
   padding: 1rem;
@@ -23,7 +23,7 @@
 }
 
 .meal h3 {
-  font-size: 1.2rem;
+  font-size: 1.1em;
   margin-bottom: 1rem;
 }
 
@@ -42,9 +42,26 @@
 }
 
 .price-popular span {
-  font-size: 0.6em;
-  margin-left: 1em;
+  font-size: 0.7em;
+  margin-left: 0.8em;
   font-weight: 600;
   color: #ff8000;
   vertical-align: middle;
+}
+
+@media (max-width: 1124px) {
+  .meal {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .meal {
+    width: 100%;
+  }
+
+  .meal:hover {
+    box-shadow: none;
+    transition: none;
+  }
 }

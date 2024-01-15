@@ -1,9 +1,21 @@
+.categories {
+  width: 850px;
+}
+
 .part-content {
   display: flex;
   margin: 2rem 0;
   position: relative;
 }
 
-.categories {
-  width: 850px;
+@media (max-width: 768px) {
+  .part-content {
+    flex-direction: column;
+    margin: 2rem 0 0 0;
+  }
+
+  .categories {
+    width: 100%;
+    padding: 0.5em;
+  }
 }
