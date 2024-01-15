@@ -1,0 +1,23 @@
+.category {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  margin-bottom: 0.7em;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.meals {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-bottom: 4em;
+}
+
+@media (max-width: 768px) {
+  .meals {
+    margin-bottom: 1em;
+  }
+}

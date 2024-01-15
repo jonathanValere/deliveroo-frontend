@@ -1,12 +1,21 @@
-.meals {
+.categories {
+  width: 850px;
+}
+
+.part-content {
   display: flex;
-  gap: 1.2rem;
-  flex-wrap: wrap;
-  margin-bottom: 4em;
+  margin: 2em 1em;
+  position: relative;
 }
 
 @media (max-width: 768px) {
-  .meals {
-    margin-bottom: 1em;
+  .part-content {
+    flex-direction: column;
+    margin: 2rem 0 0 0;
+  }
+
+  .categories {
+    width: 100%;
+    padding: 0.5em;
   }
 }

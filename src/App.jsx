@@ -1,5 +1,5 @@
 import "./App.css";
-import Content from "./components/Content";
+import Main from "./components/Main";
 import Header from "./components/Header/Header";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Header />
-      <Content />
+      <Main />
     </>
   );
 }

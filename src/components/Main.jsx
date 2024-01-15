@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Restaurant from "./Restaurant/Restaurant";
-import Categories from "./Categories/Categories";
+import Meals from "./Meals/Meals";
 
-export default function Content() {
+export default function Main() {
   // Déclaration des states ----
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -36,7 +36,7 @@ export default function Content() {
         description={data.restaurant.description}
         picture={data.restaurant.picture}
       />
-      <Categories categories={data.categories} />
+      <Meals categories={data.categories} />
     </main>
   );
 }

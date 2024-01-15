@@ -1,4 +1,4 @@
-/* VARIABLES */
+@import url("./assets/css/fonts.css");
 
 :root {
   --border-radius: 6px;
@@ -14,6 +14,12 @@
 body {
   background-color: #f2f5f5;
   font-family: IBM, sans-serif;
+}
+
+h1 {
+  font-weight: 600;
+  font-style: normal;
+  font-family: "Stratos Deliveroo Web";
 }
 
 .wrapper {

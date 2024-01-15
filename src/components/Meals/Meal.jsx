@@ -2,8 +2,12 @@ import styles from "./Meal.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Meal({ datas }) {
+  const handleAddMealToCart = () => {
+    return console.log(datas);
+  };
+
   return (
-    <article className={styles.meal}>
+    <article className={styles.meal} onClick={handleAddMealToCart}>
       <div>
         <h3>{datas.title}</h3>
         <p className={styles.description}>{datas.description}</p>

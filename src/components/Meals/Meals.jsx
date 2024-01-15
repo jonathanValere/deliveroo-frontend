@@ -1,11 +1,33 @@
-import Meal from "./Meal";
+import Category from "./Category";
+import Cart from "../Cart/Cart";
 import styles from "./Meals.module.css";
-export default function Meals({ dataMeals }) {
+import { useState } from "react";
+
+export default function Meals({ categories }) {
+  const [mealDatas, setMealDatas] = useState({});
+
   return (
-    <div className={styles.meals}>
-      {dataMeals.map((meal) => (
-        <Meal key={meal.id} datas={meal} />
-      ))}
-    </div>
+    <section>
+      <div className="wrapper">
+        <div className={styles["part-content"]}>
+          <div className={styles.categories}>
+            {categories.map((cat) => {
+              // console.log(cat.meals);
+              return (
+                cat.meals.length !== 0 && (
+                  <Category
+                    key={cat.name}
+                    dataCategory={cat}
+                    mealDatas={mealDatas}
+                    setMealDatas={setMealDatas}
+                  />
+                )
+              );
+            })}
+          </div>
+          <Cart />
+        </div>
+      </div>
+    </section>
   );
 }

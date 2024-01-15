@@ -1,0 +1,24 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2em 0;
+  color: var(--grey-color);
+}
+
+.item-infos {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+}
+
+.item-quantity {
+  display: flex;
+  gap: 0.3em;
+  align-items: center;
+}
+
+.item-quantity span {
+  font-size: 1.4em;
+  color: var(--primary-color);
+}
