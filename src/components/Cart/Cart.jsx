@@ -2,7 +2,6 @@ import styles from "./Cart.module.css";
 import Item from "./Item";
 
 export default function Cart({ ...props }) {
-  console.log(props);
   return (
     <aside className={styles.cart}>
       <button>Valider mon panier</button>

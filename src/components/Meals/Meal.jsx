@@ -2,9 +2,13 @@ import styles from "./Meal.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Meal({ ...props }) {
-  // console.log(props);
   const handleAddMealToCart = () => {
     const copyMeals = [...props.meals];
+    for (const meal of copyMeals) {
+      if (meal.id === props.datas.id) {
+        return console.log("Il est déjà choisi");
+      }
+    }
     copyMeals.push(props.datas);
     return props.setSelectMeals(copyMeals);
   };
