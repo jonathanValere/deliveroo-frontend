@@ -23,7 +23,7 @@ export default function Cart({ ...props }) {
       {props.meals.length !== 0 && (
         <div>
           <Item name="Sous-total" price={0} />
-          <Item name="Frais de livraison" price={2.5} />
+          <Item name="Frais de livraison" price="2.50" />
           <Item name="Total" price={0} />
         </div>
       )}

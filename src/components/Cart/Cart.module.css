@@ -54,7 +54,6 @@
 .items-cart {
   max-height: 300px;
   overflow-y: scroll;
-  /* border-bottom: 1px solid var(--grey-color); */
 }
 
 @media (max-width: 1124px) {
