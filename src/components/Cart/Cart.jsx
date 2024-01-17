@@ -3,11 +3,9 @@ import Item from "./Item";
 import Result from "./Result";
 
 export default function Cart({ ...props }) {
-  const fee = 2.5;
-  const subTotal = props.total - fee;
-  // const subTwoDecimal = subTotal.toFixed(2).replace(".", ",");
-  // const totalTwoDecimal = props.total.toFixed(2).replace(".", ",");
-  // console.log(props);
+  const fee = 2.5; // Valeur des frais de livraison
+  const totalWithFee = props.total + fee; // Valeur de total avec ajout des frais de livraison
+  // Affiche le panier ---
   return (
     <aside className={styles.cart}>
       <button
@@ -22,20 +20,23 @@ export default function Cart({ ...props }) {
       <div className={styles["items-cart"]}>
         {props.cart.length !== 0 &&
           props.cart.map((meal) => (
+            // Affiche le contenu du panier ---
             <Item
               key={meal.id}
               name={meal.title}
               price={meal.price}
               setTotal={props.setTotal}
+              total={props.total}
             />
           ))}
       </div>
       {props.cart.length === 0 && <p>Votre panier est vide</p>}
       {props.cart.length !== 0 && (
-        <div>
-          <Result name="Sous-total" price={subTotal} />
+        // Affiche la partie résultat du panier ---
+        <div className={styles.result}>
+          <Result name="Sous-total" price={props.total} />
           <Result name="Frais de livraison" price={fee} />
-          <Result name="Total" price={props.total} />
+          <Result name="Total" price={totalWithFee} />
         </div>
       )}
     </aside>

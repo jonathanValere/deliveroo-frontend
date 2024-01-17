@@ -23,4 +23,5 @@
 .item-quantity span {
   font-size: 1.4em;
   color: var(--primary-color);
+  cursor: pointer;
 }

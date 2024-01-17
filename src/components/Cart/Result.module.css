@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   color: var(--grey-color);
-  padding: 0.3em 0;
+  padding: 0.7em 0;
 }
 
 .result-infos {
@@ -12,4 +12,11 @@
   gap: 0.8em;
   max-width: 245px;
   line-height: 1.2em;
+}
+
+.total {
+  font-weight: 600;
+  font-size: 1.1em;
+  border-top: 1px solid var(--grey-color);
+  padding: 1rem 0;
 }

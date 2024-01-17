@@ -39,6 +39,10 @@
   color: #8e9d9e;
 }
 
+.result {
+  border-top: 1px solid var(--grey-color);
+}
+
 .subTotal {
   color: var(--grey-color);
   /* border-top: 1px solid var(--grey-color); */

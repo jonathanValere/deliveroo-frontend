@@ -3,9 +3,11 @@ import Cart from "../Cart/Cart";
 import styles from "./Meals.module.css";
 import { useState } from "react";
 
+// Composant qui affiche la section principal : les catégories avec les repas et le panier
+
 export default function Meals({ categories }) {
-  const [cart, setCart] = useState([]);
-  const [total, setTotal] = useState(2.5);
+  const [cart, setCart] = useState([]); // Panier qui contiendra tous nos articles
+  const [total, setTotal] = useState(0); // Valeur totale du panier
 
   return (
     <section>
@@ -15,6 +17,7 @@ export default function Meals({ categories }) {
             {categories.map((cat) => {
               return (
                 cat.meals.length !== 0 && (
+                  // Affiche les catégories avec les repas
                   <Category
                     key={cat.name}
                     dataCategory={cat}
@@ -27,7 +30,13 @@ export default function Meals({ categories }) {
               );
             })}
           </div>
-          <Cart cart={cart} total={total} setTotal={setTotal} />
+          {/* Affiche le panier */}
+          <Cart
+            cart={cart}
+            setCart={setCart}
+            total={total}
+            setTotal={setTotal}
+          />
         </div>
       </div>
     </section>

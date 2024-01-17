@@ -5,8 +5,8 @@ import Meals from "./Meals/Meals";
 
 export default function Main() {
   // Déclaration des states ----
-  const [data, setData] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState({}); // State avec toutes les données récupérées du back
+  const [isLoading, setIsLoading] = useState(true); // State dans l'attente d'une réponse de la requête
 
   // Fonction requête axios ------
   const fetchData = async () => {
@@ -21,7 +21,7 @@ export default function Main() {
     }
   };
   // ------------------
-  // Requête avec UseEffect -----
+  // Requête avec UseEffect qui affichera toutes les données sur les catégories et repas proposés au lancement de l'application -----
   useEffect(() => {
     fetchData();
   }, []);
@@ -31,11 +31,13 @@ export default function Main() {
     <span>En cours de chargement...</span>
   ) : (
     <main>
+      {/* Affiche information sur le restaurant */}
       <Restaurant
         name={data.restaurant.name}
         description={data.restaurant.description}
         picture={data.restaurant.picture}
       />
+      {/* Affiche la section principale (catégories, repas, panier) */}
       <Meals categories={data.categories} />
     </main>
   );
