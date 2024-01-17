@@ -4,7 +4,8 @@ import styles from "./Meals.module.css";
 import { useState } from "react";
 
 export default function Meals({ categories }) {
-  const [selectMeals, setSelectMeals] = useState([]);
+  const [cart, setCart] = useState([]);
+  const [total, setTotal] = useState(2.5);
 
   return (
     <section>
@@ -17,14 +18,16 @@ export default function Meals({ categories }) {
                   <Category
                     key={cat.name}
                     dataCategory={cat}
-                    setSelectMeals={setSelectMeals}
-                    meals={selectMeals}
+                    cart={cart}
+                    setCart={setCart}
+                    total={total}
+                    setTotal={setTotal}
                   />
                 )
               );
             })}
           </div>
-          <Cart meals={selectMeals} />
+          <Cart cart={cart} total={total} setTotal={setTotal} />
         </div>
       </div>
     </section>

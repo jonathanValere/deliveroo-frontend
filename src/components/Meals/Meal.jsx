@@ -1,16 +1,21 @@
+import { useState } from "react";
 import styles from "./Meal.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Meal({ ...props }) {
   const handleAddMealToCart = () => {
-    const copyMeals = [...props.meals];
-    for (const meal of copyMeals) {
+    const copyCart = [...props.cart];
+    const priceMeal = Number(props.datas.price);
+
+    for (const meal of copyCart) {
       if (meal.id === props.datas.id) {
+        props.setTotal(props.total + priceMeal);
         return console.log("Il est déjà choisi");
       }
     }
-    copyMeals.push(props.datas);
-    return props.setSelectMeals(copyMeals);
+    copyCart.push(props.datas);
+    props.setTotal(props.total + priceMeal);
+    return props.setCart(copyCart);
   };
 
   return (

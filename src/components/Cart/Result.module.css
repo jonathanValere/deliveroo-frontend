@@ -1,0 +1,15 @@
+.result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--grey-color);
+  padding: 0.3em 0;
+}
+
+.result-infos {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  max-width: 245px;
+  line-height: 1.2em;
+}

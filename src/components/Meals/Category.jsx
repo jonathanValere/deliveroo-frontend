@@ -10,8 +10,10 @@ export default function Category({ ...props }) {
           <Meal
             key={meal.id}
             datas={meal}
-            setSelectMeals={props.setSelectMeals}
-            meals={props.meals}
+            cart={props.cart}
+            setCart={props.setCart}
+            total={props.total}
+            setTotal={props.setTotal}
           />
         ))}
       </ul>

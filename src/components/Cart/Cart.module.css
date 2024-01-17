@@ -13,19 +13,30 @@
 
 .cart button {
   width: 100%;
-  background-color: var(--primary-color);
   border: none;
   padding: 1em;
   border-radius: var(--border-radius);
-  color: var(--fifth-color);
   font-size: 1em;
   font-weight: 600;
   margin-bottom: 0.7em;
 }
 
+.button-validate {
+  background-color: var(--primary-color);
+  color: var(--fifth-color);
+  cursor: pointer;
+}
+
+.button-disabled {
+  background-color: #bac3c3;
+  color: #8e9d9e;
+  cursor: not-allowed;
+}
+
 .cart p {
   text-align: center;
-  padding: 3em 0;
+  padding: 3em 0 2em 0;
+  color: #8e9d9e;
 }
 
 .subTotal {
