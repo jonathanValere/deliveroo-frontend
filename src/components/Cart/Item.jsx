@@ -2,11 +2,9 @@ import { useState, useEffect } from "react";
 import styles from "./Item.module.css";
 
 //Composant du repas dans le panier (Cart) ----------------
-// ⚠️ A FAIRE :
-// Gérer la quantité "0", le plat doit disparaître (composant Item détruit)
 
 export default function Item({ ...props }) {
-  const { name, price, total, setTotal } = props;
+  const { name, price, setTotal, handleRemoveMealToCart, id } = props;
 
   const [quantity, setQuantity] = useState(1); // State de la quantité choisie
   const priceToNumber = Number(price); // Conversion de la chaîne de cractère en nombre pour effectuer les calculs
@@ -17,6 +15,11 @@ export default function Item({ ...props }) {
   useEffect(() => {
     const newPrice = priceToNumber * quantity;
     setPriceItem(newPrice);
+    // Gestion de la suppression du panier lorsque la quantité est à 0. --
+    if (quantity === 0) {
+      handleRemoveMealToCart(id);
+    }
+    // --
   }, [quantity]);
 
   //Fonction permettant de gérer la quantité ----

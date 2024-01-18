@@ -17,6 +17,7 @@ export default function Meal({ ...props }) {
         return console.log("Il est déjà choisi");
       }
     }
+
     copyCart.push(props.datas);
     props.setTotal(props.total + priceMeal);
     return props.setCart(copyCart);

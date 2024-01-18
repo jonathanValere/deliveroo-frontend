@@ -5,6 +5,13 @@ import Result from "./Result";
 export default function Cart({ ...props }) {
   const fee = 2.5; // Valeur des frais de livraison
   const totalWithFee = props.total + fee; // Valeur de total avec ajout des frais de livraison
+
+  const handleRemoveMealToCart = (idMeal) => {
+    const copyCart = [...props.cart];
+    const copyCartUpdated = copyCart.filter((meal) => meal.id !== idMeal);
+    props.setCart(copyCartUpdated);
+  };
+
   // Affiche le panier ---
   return (
     <aside className={styles.cart}>
@@ -23,10 +30,11 @@ export default function Cart({ ...props }) {
             // Affiche le contenu du panier ---
             <Item
               key={meal.id}
+              id={meal.id}
               name={meal.title}
               price={meal.price}
               setTotal={props.setTotal}
-              total={props.total}
+              handleRemoveMealToCart={handleRemoveMealToCart}
             />
           ))}
       </div>
