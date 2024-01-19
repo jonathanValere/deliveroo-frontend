@@ -7,7 +7,23 @@ import { useState } from "react";
 
 export default function Meals({ categories }) {
   const [cart, setCart] = useState([]); // Panier qui contiendra tous nos articles
-  const [total, setTotal] = useState(0); // Valeur totale du panier
+
+  // Gestion de la quantité -----
+  const handleQuantity = (mealId, operator) => {
+    const copyCart = [...cart];
+    for (const meal of copyCart) {
+      if (mealId === meal.id) {
+        if (operator === "+") {
+          meal.quantity += 1;
+        } else {
+          meal.quantity -= 1;
+        }
+      }
+    }
+    // Gestion sur la quantité = 0 ---
+    const copyCartFilter = copyCart.filter((meal) => meal.quantity !== 0);
+    return setCart(copyCartFilter);
+  };
 
   return (
     <section>
@@ -23,20 +39,13 @@ export default function Meals({ categories }) {
                     dataCategory={cat}
                     cart={cart}
                     setCart={setCart}
-                    total={total}
-                    setTotal={setTotal}
                   />
                 )
               );
             })}
           </div>
           {/* Affiche le panier */}
-          <Cart
-            cart={cart}
-            setCart={setCart}
-            total={total}
-            setTotal={setTotal}
-          />
+          <Cart cart={cart} setCart={setCart} handleQuantity={handleQuantity} />
         </div>
       </div>
     </section>

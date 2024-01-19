@@ -1,37 +1,31 @@
-import { useState, useEffect } from "react";
+// import { useState } from "react";
 import styles from "./Item.module.css";
 
 //Composant du repas dans le panier (Cart) ----------------
 
 export default function Item({ ...props }) {
-  const { name, price, setTotal, handleRemoveMealToCart, id } = props;
+  // récupérer props.meal
 
-  const [quantity, setQuantity] = useState(1); // State de la quantité choisie
-  const priceToNumber = Number(price); // Conversion de la chaîne de cractère en nombre pour effectuer les calculs
-  const [priceItem, setPriceItem] = useState(priceToNumber); // State de la valeur du repas de type Number
+  // const [quantity, setQuantity] = useState(1); // State de la quantité choisie
+  // const priceToNumber = Number(props.meal.price); // Conversion de la chaîne de caractère en nombre pour effectuer les calculs
+  // const [priceItem, setPriceItem] = useState(priceToNumber); // State de la valeur du repas de type Number
 
-  // Hook déclenché au moment où quantity est mis à jour. Il modifie la valeur du repas
-
-  useEffect(() => {
-    const newPrice = priceToNumber * quantity;
-    setPriceItem(newPrice);
-    // Gestion de la suppression du panier lorsque la quantité est à 0. --
-    if (quantity === 0) {
-      handleRemoveMealToCart(id);
-    }
-    // --
-  }, [quantity]);
-
-  //Fonction permettant de gérer la quantité ----
-  const handleClickQuantity = (operator) => {
-    if (operator === "+") {
-      setQuantity((prev) => prev + 1);
-      setTotal((prev) => prev + priceToNumber);
-    } else {
-      setQuantity((prev) => prev - 1);
-      setTotal((prev) => prev - priceToNumber);
-    }
-  };
+  // Fonction permettant de gérer la quantité ----
+  // const handleClickQuantity = (operator) => {
+  //   if (operator === "+") {
+  //     props.meal.quantity += 1;
+  //     props.meal.price *= props.meal.quantity;
+  //     // setQuantity((prev) => prev + 1);
+  //     // setTotal((prev) => prev + priceToNumber);
+  //   } else {
+  //     props.meal.quantity -= 1;
+  //     props.meal.price /= props.meal.quantity;
+  //     // setQuantity((prev) => prev - 1);
+  //     // setTotal((prev) => prev - priceToNumber);
+  //   }
+  // };
+  const totalItem = props.meal.price * props.meal.quantity;
+  // props.setSubTotal(totalItem);
 
   return (
     <div className={styles.item}>
@@ -39,19 +33,19 @@ export default function Item({ ...props }) {
         <div className={styles["item-quantity"]}>
           <span
             className="icon-minus"
-            onClick={() => handleClickQuantity("-")}
+            onClick={() => props.onClick(props.meal.id, "-")}
           ></span>
-          {quantity}{" "}
+          {props.meal.quantity}{" "}
           <span
             className="icon-plus"
-            onClick={() => handleClickQuantity("+")}
+            onClick={() => props.onClick(props.meal.id, "+")}
           ></span>
         </div>
         {/* name du meal */}
-        {name}
+        {props.meal.title}
       </div>
       {/* Prix du meal */}
-      <span>{priceItem} €</span>
+      <span>{totalItem} €</span>
     </div>
   );
 }

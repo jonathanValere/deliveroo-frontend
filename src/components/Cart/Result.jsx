@@ -10,7 +10,8 @@ export default function Result({ ...props }) {
       }`}
     >
       <div className={styles["result-infos"]}>{props.name}</div>
-      <span>{props.price.toFixed(2).replace(".", ",")} €</span>
+      {/* <span>{props.price.toFixed(2).replace(".", ",")} €</span> */}
+      <span>{props.price} €</span>
     </div>
   );
 }
