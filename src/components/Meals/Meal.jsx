@@ -13,8 +13,7 @@ export default function Meal({ ...props }) {
       if (meal.id === props.datas.id) {
         // Ajout d'une quantité supplémentaire
         meal.quantity += 1;
-        props.setCart(copyCart);
-        return console.log("Ajout d'une quantité en plus");
+        return props.setCart(copyCart);
       }
     }
 
